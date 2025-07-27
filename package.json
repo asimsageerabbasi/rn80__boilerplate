@@ -7,7 +7,10 @@
     "ios": "react-native run-ios",
     "lint": "eslint .",
     "start": "react-native start",
-    "test": "jest"
+    "test": "jest",
+    "link-bundle": "npx react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res",
+    "app:android:debug:win": "npm run link-bundle && cd android && gradlew.bat --stop && gradlew.bat assembleDebug",
+    "app:android:debug:unix": "npm run link-bundle && cd android && ./gradlew --stop && ./gradlew assembleDebug"
   },
   "dependencies": {
     "react": "19.1.0",
