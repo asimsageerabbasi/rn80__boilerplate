@@ -1,28 +1,18 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
-import { NewAppScreen } from '@react-native/new-app-screen';
-import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
-
-function App() {
-  const isDarkMode = useColorScheme() === 'dark';
-
+import { StatusBar } from 'react-native';
+import React from 'react';
+import MainNavigation from './src/navigation/MainNavigation';
+import { Provider } from "react-redux";
+import { persistor, store } from './src/reduxStore/store';
+import { PersistGate } from 'redux-persist/integration/react';
+const App = () => {
   return (
-    <View style={styles.container}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <NewAppScreen templateFileName="App.tsx" />
-    </View>
-  );
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <StatusBar barStyle={'dark-content'} translucent backgroundColor="transparent" />
+        <MainNavigation />
+      </PersistGate>
+    </Provider>
+  )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
-
-export default App;
+export default App

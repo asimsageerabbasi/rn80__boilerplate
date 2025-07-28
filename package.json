@@ -10,12 +10,35 @@
     "test": "jest",
     "link-bundle": "npx react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res",
     "app:android:debug:win": "npm run link-bundle && cd android && gradlew.bat --stop && gradlew.bat assembleDebug",
-    "app:android:debug:unix": "npm run link-bundle && cd android && ./gradlew --stop && ./gradlew assembleDebug"
+    "app:android:debug:mac": "npm run link-bundle && cd android && ./gradlew --stop && ./gradlew assembleDebug"
   },
   "dependencies": {
+    "@homielab/react-native-auto-scroll": "^0.0.10",
+    "@react-native-community/geolocation": "^3.4.0",
+    "@react-native/new-app-screen": "0.80.2",
+    "@react-navigation/native": "^7.1.16",
+    "@react-navigation/native-stack": "^7.3.23",
+    "@reduxjs/toolkit": "^2.8.2",
+    "axios": "^1.11.0",
+    "jwt-decode": "^4.0.0",
+    "lottie-react-native": "^7.2.4",
     "react": "19.1.0",
     "react-native": "0.80.2",
-    "@react-native/new-app-screen": "0.80.2"
+    "react-native-gesture-handler": "^2.27.2",
+    "react-native-linear-gradient": "^2.8.3",
+    "react-native-mmkv": "^3.3.0",
+    "react-native-pager-view": "^6.8.1",
+    "react-native-reanimated": "^4.0.0",
+    "react-native-responsive-fontsize": "^0.5.1",
+    "react-native-responsive-screen": "^1.4.2",
+    "react-native-safe-area-context": "^5.5.2",
+    "react-native-screens": "^4.13.1",
+    "react-native-svg": "^15.12.0",
+    "react-native-svg-transformer": "^1.5.1",
+    "react-native-vector-icons": "^10.3.0",
+    "react-native-worklets": "^0.4.0",
+    "react-redux": "^9.2.0",
+    "redux-persist": "^6.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
