@@ -20,11 +20,13 @@ export const useSplash = () => {
     }
     const isUserLoggedIn= async()=>{
         const token = await mmkvStorage.getItem("token")
-        if(token){
-            console.log("in");
+        if(!token){
+            console.log("token expired");
+            resetAndNavigate('preAuthNavigation');
             return false;
         }
-        resetAndNavigate('loginScreen') 
+        resetAndNavigate('postAuthNavigation');
+       
     }
     
     useEffect(()=>{

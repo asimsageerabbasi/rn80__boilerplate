@@ -1,12 +1,13 @@
-import {SafeAreaView as RNSafeAreaView,StyleSheet, StatusBar, Platform } from 'react-native'
-import React from 'react'
+import {StyleSheet, StatusBar, Platform } from 'react-native';
+import React from 'react';
+import {SafeAreaView as RNSafeAreaView} from 'react-native-safe-area-context';
 import Header from './Header'
-import { Colors } from '../utils/Constants'
+import { Colors } from '@utils/Constants'
 
 const SafeAreaView = ({children,style}) => {
   return (
     <RNSafeAreaView style={[styles.container,style]}>
-        {children}
+      {children}
     </RNSafeAreaView>
   )
 }

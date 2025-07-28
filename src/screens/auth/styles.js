@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 import { BAR_HEIGHT, Colors, Fonts, SCREEN_HEIGHT, SCREEN_WIDTH } from "../../utils/Constants";
-import {widthPercentageToDP as wp} from 'react-native-responsive-screen'
+import {wp} from '@utils/Constants'
 
 export const styles = StyleSheet.create({
     mainContainer:{
@@ -31,11 +31,15 @@ export const styles = StyleSheet.create({
     },
     logo:{width:100,height:100,borderRadius:10},
     logoContainer:{width:100,height:100,marginBottom:10},
-
-
+    footerContainer:{flex:1,justifyContent:'flex-end'},
+    footerWrapper:{
+        justifyContent:'center',
+        alignItems:'center',
+        marginBottom:wp(5)
+    },
     // zepto styles
     logoAndSloganZepto:{
-        marginTop:80
+        marginTop:wp(20)
     },
     sloganZepto:{
         fontSize:wp(7),

@@ -1,4 +1,5 @@
 import { Dimensions, Platform, StatusBar } from "react-native";
+import {widthPercentageToDP as wp,heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
 export const Color = {
     primary : "#f7ca49",//"#8c5fad",//'#f7ca49',
@@ -41,8 +42,20 @@ export const ThemeZepto = {
     textLink:"#EF4372"
 
 }
-
-export const Colors = ThemeZepto;
+export const ThemeMauEatz = {
+  app: 'me', // app name prefix
+  primary: '#E50914', // Netflix red
+  primary_light: '#FF3B3F', // lighter red for hover/active
+  secondary: '#221f1f', // dark background
+  text: '#FFFFFF', // white text
+  disabled: '#6e6e6e', // muted gray for disabled items
+  border: '#333333', // subtle border color
+  backgroundSecondary: '#141414', // dark background (Netflix black)
+  buttonPrimaryL1: '#E50914', // red gradient start
+  buttonPrimaryL2: '#B81D24', // red gradient end
+  textLink: '#FF6B81', // light red/pinkish links (for contrast)
+};
+export const Colors = ThemeMauEatz;
 
 export const Fonts = {
     Regular : 'Okra-Regular',
@@ -83,8 +96,11 @@ export const SCREEN_WIDTH = Dimensions.get('window').width;
 export const SCREEN_HEIGHT = Dimensions.get('window').height;
 export const apps = {
     Blinkit:'bl',
-    Zepto:'zp'
+    Zepto:'zp',
+    MauEatz:'me'
+
 }
 export const BAR_HEIGHT = Platform.OS==='android'? StatusBar.currentHeight:0;
 export const SCREEN_HEIGHT_WIDTH_BAR = BAR_HEIGHT + SCREEN_HEIGHT;
+export {wp,hp};
 

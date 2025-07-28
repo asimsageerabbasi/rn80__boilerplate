@@ -4,12 +4,15 @@ import MainNavigation from './src/navigation/MainNavigation';
 import { Provider } from "react-redux";
 import { persistor, store } from './src/reduxStore/store';
 import { PersistGate } from 'redux-persist/integration/react';
+import {SafeAreaProvider} from 'react-native-safe-area-context'
 const App = () => {
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        <StatusBar barStyle={'dark-content'} translucent backgroundColor="transparent" />
-        <MainNavigation />
+        <SafeAreaProvider>
+          <StatusBar barStyle={'dark-content'} translucent backgroundColor="transparent" />
+          <MainNavigation />
+        </SafeAreaProvider>
       </PersistGate>
     </Provider>
   )

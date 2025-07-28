@@ -6,10 +6,9 @@ import Zepto from './zepto'
 import { apps, Colors } from '../../utils/Constants';
 
 const Login = () => {
-
   return (
       <View style={styles.mainContainer}>
-        {Colors.app===apps.Blinkit?<Blink/>:<Zepto/>}
+        <Zepto/>
       </View>
   )
 }

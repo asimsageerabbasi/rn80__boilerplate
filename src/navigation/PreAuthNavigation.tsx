@@ -6,7 +6,7 @@ const Stack = createNativeStackNavigator();
 
 const PreAuthNavigation: FC = () => {
   return (
-        <Stack.Navigator initialRouteName='splashScreen' screenOptions={{headerShown:false}}>
+        <Stack.Navigator initialRouteName='loginScreen' screenOptions={{headerShown:false}}>
           <Stack.Screen name='loginScreen' component={Login} options={{animation:'fade'}}/>
         </Stack.Navigator>
   )
