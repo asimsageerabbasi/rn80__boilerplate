@@ -14,7 +14,9 @@ export const authSlice = createSlice({
     }
 });
 
-export const {setCurrentOrder} = authSlice.actions;
+export const {
+    setCurrentOrder,
+} = authSlice.actions;
 export default authSlice.reducer;
 
 

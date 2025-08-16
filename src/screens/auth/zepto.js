@@ -1,16 +1,16 @@
 import { View, Text, StatusBar } from 'react-native';
-import React from 'react';
-import SafeAreaView from '../../components/SafeAreaView';
-import { SCREEN_WIDTH, textType } from '../../utils/Constants';
-import SVGZepto from "../../assets/images/zeptobg.svg";
-import SVGZeptoLogo from "../../assets/images/zeptologored.svg";
-import CustomText from '../../components/CustomText';
+import React from 'react'
+import { content, Face, Fonts, SCREEN_WIDTH, textType, wp } from '@utils/Constants';
+import {
+  CustomText,
+  CustomSafeAreaView,
+  CustomInput,
+  PrimaryButton,
+  TermsAndPrivacy
+} from '@components/index';
 import { styles } from './styles';
-import CustomInput from '../../components/CustomInput';
 import { useLogin } from './login-hook';
-import PrimaryButtonZepto from '../../components/PrimaryButtonZepto';
-import PrimaryButton from '@components/PrimaryButton';
-
+import {svgList} from '@utils/svgs';
 
 const Zepto = () => {
      const {
@@ -18,11 +18,13 @@ const Zepto = () => {
         setMobileNumber,
         handleOnSubmit,
         handleOnChangeText,
+        disabled,
+        loginState
       } = useLogin();
   return (
-    <SafeAreaView>
+    <CustomSafeAreaView>
       <View style={styles.backgroundContainer}>
-        <SVGZepto 
+        <svgList.loginBg 
           width="100%" 
           height="100%"
           preserveAspectRatio="xMidYMid slice" 
@@ -30,10 +32,19 @@ const Zepto = () => {
       </View>
       <View style={styles.contentContainer}>
         <View style={styles.logoAndSloganZepto}>
-            <SVGZeptoLogo />
-            <Text numberOfLines={3} style={styles.sloganZepto}>Groceries delivered in 10 minutes</Text>
+          <svgList.mauLogo 
+            width={wp(50)}
+            height={wp(50)}
+          />
         </View>
         <View style={styles.inputWrapper}>
+            <CustomText 
+              numberOfLines={2}
+              type={textType.xl}
+              face={Face.Bold}
+              textStyle={styles.slogan}
+              value={content?.global?.appSlogan}
+            /> 
             <CustomInput 
                 onChangeText={handleOnChangeText}
                 leftComp={<Text style={styles.inputLeftTextZepto}>+91</Text>}
@@ -41,18 +52,18 @@ const Zepto = () => {
                 keyboardType="numeric"
                 InputContainerStyle={styles.InputContainerStyle}
                 inputStyle={styles.inputStyle}
+                maxLength={10}
             />
             {/* <PrimaryButtonZepto value="Continue"/> */}
-            <PrimaryButton value="Continue"/>
+            <PrimaryButton 
+              disabled={disabled}
+              onPress={handleOnSubmit}
+              loading={loginState?.loading}
+            />
         </View>
-        <View style={styles.footerContainer}>
-            <View style={styles.footerWrapper}>
-            <Text style={styles.zeptoPolicyText}>By continuing you are agree to our</Text>
-            <Text style={styles.zeptoPolicyLink}>Terms of Service <Text style={styles.zeptoPolicyText}>&</Text> Privacy Policy</Text>
-            </View>
-        </View>
+        <TermsAndPrivacy/>
       </View>
-    </SafeAreaView>
+    </CustomSafeAreaView>
   );
 };
 

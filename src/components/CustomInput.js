@@ -30,7 +30,7 @@ const CustomInput = (props) => {
 
 const styles = StyleSheet.create({
     inputStyle:{
-        color:Colors.text,
+        color:Colors.darkText,
         fontFamily:Fonts.SemiBold,
         justifyContent:'center',
         alignItems:'center',

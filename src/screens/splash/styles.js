@@ -1,11 +1,10 @@
 import { StyleSheet } from "react-native";
-import { Color, Colors, Fonts, SCREEN_WIDTH } from "../../utils/Constants";
+import { Color, Colors, Fonts, hp, SCREEN_HEIGHT, SCREEN_WIDTH } from "../../utils/Constants";
 
 export const styles = StyleSheet.create({
     mainContainerBlinkit:{
         flex:1,
         backgroundColor:Colors.primary,
-        justifyContent:'center',
         alignItems:'center',
     },
     title:{
@@ -15,8 +14,10 @@ export const styles = StyleSheet.create({
         flex:1
     },
     imageContainer:{
-        width:SCREEN_WIDTH*0.3,
-        height:SCREEN_WIDTH*0.16,
+        width:SCREEN_WIDTH*0.4,
+        height:SCREEN_WIDTH*0.4,
+        overflow:'hidden',
+        marginTop:SCREEN_HEIGHT*0.35
     },
     imageStyle:{
         width:SCREEN_WIDTH*0.38,

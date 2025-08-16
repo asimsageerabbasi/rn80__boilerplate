@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet,TouchableOpacity } from 'react-native'
 import React from 'react'
-import CustomText from './CustomText';
+import CustomText from './CustomText.tsx';
 import { Colors, Fonts } from '../utils/Constants';
 import {RFValue} from 'react-native-responsive-fontsize';
 import LinearGradient from 'react-native-linear-gradient';

@@ -5,7 +5,8 @@ import { persistStore, persistReducer} from 'redux-persist';
 
 const persistConfig = {
     key:"shazp",
-    storage:mmkvStorage
+    storage:mmkvStorage,
+    whitelist:['auth']
 }
 const reducers = combineReducers({
     auth:authSlice

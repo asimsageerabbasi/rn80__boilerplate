@@ -3,26 +3,26 @@ import React from 'react'
 import LinearGradient from 'react-native-linear-gradient';
 import { styles } from './styles';
 import { Images } from '../../utils/images';
-import FastImage from '../../components/FastImage';
-import CustomText from '../../components/CustomText';
-import { textType } from '../../utils/Constants';
+import {Colors, content, Face, textType } from '@utils/Constants';
+import {FastImage, CustomText } from '@components/index';
 
 
 const Zepto = () => {
   return (
-   <LinearGradient colors={["#8410c7","#4c0394"]} style={styles.mainContainerBlinkit}>
-        <FastImage 
-            resource={Images.zeptoLogoWhite} 
-            imageContainer={styles.imageContainer}
-            imageStyle={styles.imageStyle}
+      <LinearGradient colors={[Colors.primary,Colors.buttonPrimaryL2,Colors.primary]} style={styles.mainContainerBlinkit}>
+        <FastImage
+          resource={Images.logo}
+          imageContainer={styles.imageContainer}
+          imageStyle={styles.imageStyle}
         />
-        <CustomText 
-            textStyle={styles.zeptoSlogan}
-            textWrapperStyle={{marginTop:0}}
-            type={textType.xs}
-        >10 Minutes Grocery Delivery
-        </CustomText>
-    </LinearGradient>
+        <CustomText
+          type={textType.m}
+          face={Face.Medium}
+          value={content?.global?.appSlogan}
+          numberOfLines={2}
+          textStyle={{textAlign:'center'}}
+        />
+      </LinearGradient>
   )
 }
 
